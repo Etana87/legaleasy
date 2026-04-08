@@ -1,0 +1,14 @@
+# netlify.toml
+# Le dice a Netlify cómo construir el proyecto y dónde están las funciones.
+
+[build]
+  command   = "npm run build"   # comando de build
+  publish   = "dist"            # carpeta que Vite genera
+  functions = "netlify/functions" # dónde están las funciones serverless
+
+# Redirige /api/claude a la función serverless.
+# Así el frontend siempre llama a /api/claude sin importar el entorno.
+[[redirects]]
+  from   = "/api/claude"
+  to     = "/.netlify/functions/claude"
+  status = 200
