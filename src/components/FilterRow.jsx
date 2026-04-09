@@ -7,11 +7,7 @@ export default function FilterRow({ filter, setFilter }) {
         <button
           key={f}
           onClick={() => setFilter(f)}
-          className={`text-xs px-4 py-1.5 rounded-full border transition-all ${
-            filter === f
-              ? 'bg-[#c20e3d] border-[#c20e3d] text-white'
-              : 'border-[#ece4d8] text-[#9a8e84] bg-white hover:border-[#fe6e86]/40 hover:text-[#fe6e86]'
-          }`}
+          className={`chip ${filter === f ? 'active' : ''}`}
         >
           {f}
         </button>

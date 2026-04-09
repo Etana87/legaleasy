@@ -11,11 +11,7 @@ export default function ModeSelector({ mode, setMode }) {
           <button
             key={m}
             onClick={() => setMode(m)}
-            className={`flex-1 py-2 rounded-xl text-sm font-medium border transition-all ${
-              mode === m
-                ? 'bg-[#c20e3d] border-[#c20e3d] text-white'
-                : 'bg-white border-[#ece4d8] text-[#9a8e84] hover:border-[#fe6e86]/40'
-            }`}
+            className={`btn-mode ${mode === m ? 'active' : ''}`}
           >
             {m === 'basico' ? 'Básico' : 'Experto'}
           </button>

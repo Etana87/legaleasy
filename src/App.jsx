@@ -38,36 +38,11 @@ export default function App() {
         onHistoryClick={() => setScreen('history')}
         onLogoClick={() => setScreen('home')}
       />
-
       <main>
-        {screen === 'home' && (
-          <>
-            <Hero onStart={() => setScreen('input')} />
-          </>
-        )}
-        {screen === 'input' && (
-          <InputScreen
-            filter={filter}
-            setFilter={setFilter}
-            mode={mode}
-            setMode={setMode}
-            onResult={handleResult}
-            onBack={() => setScreen('home')}
-          />
-        )}
-        {screen === 'result' && (
-          <ResultView
-            result={result}
-            onBack={() => setScreen('input')}
-          />
-        )}
-        {screen === 'history' && (
-          <History
-            items={history}
-            onBack={() => setScreen('home')}
-            onSelect={handleHistorySelect}
-          />
-        )}
+        {screen === 'home'    && <Hero onStart={() => setScreen('input')} />}
+        {screen === 'input'   && <InputScreen filter={filter} setFilter={setFilter} mode={mode} setMode={setMode} onResult={handleResult} onBack={() => setScreen('home')} />}
+        {screen === 'result'  && <ResultView result={result} onBack={() => setScreen('input')} />}
+        {screen === 'history' && <History items={history} onBack={() => setScreen('home')} onSelect={handleHistorySelect} />}
       </main>
     </div>
   )
